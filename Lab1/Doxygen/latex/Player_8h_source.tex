@@ -1,0 +1,41 @@
+\doxysection{Player.\+h}
+\hypertarget{Player_8h_source}{}\label{Player_8h_source}\mbox{\hyperlink{Player_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPlayer}{Player}}\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classPlayer_ad3897c836b4550a21d5fd411b06050df}{country}};\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classPlayer_af9c920fabaafdeb7961a645315b521ff}{name}};\ \ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classPlayer_aa534e76d84c5b071ae98ec01bcfb69e9}{club}};\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classPlayer_abf30c28fac64b6b03db23b932a1f7fa7}{position}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPlayer_a05699a619d19cc7a8591582c1dfd0f5a}{games}};\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPlayer_ad32fd3ed945b08c13c4fb3fe27864e9c}{goals}};\ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPlayer_a9cb83df3e8030640711108c5c4ffab4f}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPlayer}{Player}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ other.\mbox{\hyperlink{classPlayer_ad3897c836b4550a21d5fd411b06050df}{country}}\ ==\ \mbox{\hyperlink{classPlayer_ad3897c836b4550a21d5fd411b06050df}{country}};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPlayer_af9e826ea0197f56a095e218ace45eb9b}{operator<=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPlayer}{Player}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ other\ >\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPlayer_a4773d064212496401ae556fe317cc4dc}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPlayer}{Player}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPlayer_ad3897c836b4550a21d5fd411b06050df}{country}}\ <\ other.\mbox{\hyperlink{classPlayer_ad3897c836b4550a21d5fd411b06050df}{country}};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPlayer_ad7357ca11e9669c78f92796a463b1aa5}{operator>}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPlayer}{Player}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ other\ <\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPlayer_ac310c03a16b3d840d198b2d937b2e750}{operator>=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPlayer}{Player}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ <\ other);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \};}
+
+\end{DoxyCode}

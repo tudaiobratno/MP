@@ -1,0 +1,113 @@
+\doxysection{sort\+\_\+algo.\+h File Reference}
+\hypertarget{sort__algo_8h}{}\label{sort__algo_8h}\index{sort\_algo.h@{sort\_algo.h}}
+
+
+Файл с реализацией сортировок  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for sort\+\_\+algo.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{sort__algo_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{sort__algo_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{sort__algo_8h_a110bb9c0a9f07138457f07ed46deb9ec}{merge}} (std\+::vector$<$ T $>$ \&a, long low, long mid, long high)
+\begin{DoxyCompactList}\small\item\em Функция слияния двух списков \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{sort__algo_8h_af468b4a0c76d9f1fb34af054c4a636ca}{merge\+\_\+sort}} (std\+::vector$<$ T $>$ \&a, long low, long high)
+\begin{DoxyCompactList}\small\item\em Сортировка слиянием \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{sort__algo_8h_a5d1c6d06572b803b83f2b4b4b58c1d18}{quick\+\_\+sort}} (std\+::vector$<$ T $>$ \&a, long low, long high)
+\begin{DoxyCompactList}\small\item\em Быстрая сортировка \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{sort__algo_8h_a8af7e00770fd2423a3a88c78184c751c}{down\+\_\+heap}} (std\+::vector$<$ T $>$ \&a, long k, long n)
+\begin{DoxyCompactList}\small\item\em Просеивание элемента кучи \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{sort__algo_8h_abf927cddf492ea5f0b1fc8dc1f194e38}{build\+\_\+heap}} (std\+::vector$<$ T $>$ \&a, long n)
+\begin{DoxyCompactList}\small\item\em Построение кучи из произвольного массива \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{sort__algo_8h_ac46eee67c7596c3e7a20f78924af2d7a}{heap\+\_\+sort}} (std\+::vector$<$ T $>$ \&a)
+\begin{DoxyCompactList}\small\item\em Пирамидальная сортировка \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Файл с реализацией сортировок 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sort__algo_8h_abf927cddf492ea5f0b1fc8dc1f194e38}\label{sort__algo_8h_abf927cddf492ea5f0b1fc8dc1f194e38} 
+\index{sort\_algo.h@{sort\_algo.h}!build\_heap@{build\_heap}}
+\index{build\_heap@{build\_heap}!sort\_algo.h@{sort\_algo.h}}
+\doxysubsubsection{\texorpdfstring{build\_heap()}{build\_heap()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void build\+\_\+heap (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{a,  }\item[{long}]{n }\end{DoxyParamCaption})}
+
+
+
+Построение кучи из произвольного массива 
+
+\Hypertarget{sort__algo_8h_a8af7e00770fd2423a3a88c78184c751c}\label{sort__algo_8h_a8af7e00770fd2423a3a88c78184c751c} 
+\index{sort\_algo.h@{sort\_algo.h}!down\_heap@{down\_heap}}
+\index{down\_heap@{down\_heap}!sort\_algo.h@{sort\_algo.h}}
+\doxysubsubsection{\texorpdfstring{down\_heap()}{down\_heap()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void down\+\_\+heap (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{a,  }\item[{long}]{k,  }\item[{long}]{n }\end{DoxyParamCaption})}
+
+
+
+Просеивание элемента кучи 
+
+\Hypertarget{sort__algo_8h_ac46eee67c7596c3e7a20f78924af2d7a}\label{sort__algo_8h_ac46eee67c7596c3e7a20f78924af2d7a} 
+\index{sort\_algo.h@{sort\_algo.h}!heap\_sort@{heap\_sort}}
+\index{heap\_sort@{heap\_sort}!sort\_algo.h@{sort\_algo.h}}
+\doxysubsubsection{\texorpdfstring{heap\_sort()}{heap\_sort()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void heap\+\_\+sort (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Пирамидальная сортировка 
+
+\Hypertarget{sort__algo_8h_a110bb9c0a9f07138457f07ed46deb9ec}\label{sort__algo_8h_a110bb9c0a9f07138457f07ed46deb9ec} 
+\index{sort\_algo.h@{sort\_algo.h}!merge@{merge}}
+\index{merge@{merge}!sort\_algo.h@{sort\_algo.h}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void merge (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{a,  }\item[{long}]{low,  }\item[{long}]{mid,  }\item[{long}]{high }\end{DoxyParamCaption})}
+
+
+
+Функция слияния двух списков 
+
+\Hypertarget{sort__algo_8h_af468b4a0c76d9f1fb34af054c4a636ca}\label{sort__algo_8h_af468b4a0c76d9f1fb34af054c4a636ca} 
+\index{sort\_algo.h@{sort\_algo.h}!merge\_sort@{merge\_sort}}
+\index{merge\_sort@{merge\_sort}!sort\_algo.h@{sort\_algo.h}}
+\doxysubsubsection{\texorpdfstring{merge\_sort()}{merge\_sort()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void merge\+\_\+sort (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{a,  }\item[{long}]{low,  }\item[{long}]{high }\end{DoxyParamCaption})}
+
+
+
+Сортировка слиянием 
+
+\Hypertarget{sort__algo_8h_a5d1c6d06572b803b83f2b4b4b58c1d18}\label{sort__algo_8h_a5d1c6d06572b803b83f2b4b4b58c1d18} 
+\index{sort\_algo.h@{sort\_algo.h}!quick\_sort@{quick\_sort}}
+\index{quick\_sort@{quick\_sort}!sort\_algo.h@{sort\_algo.h}}
+\doxysubsubsection{\texorpdfstring{quick\_sort()}{quick\_sort()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void quick\+\_\+sort (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{a,  }\item[{long}]{low,  }\item[{long}]{high }\end{DoxyParamCaption})}
+
+
+
+Быстрая сортировка 
+

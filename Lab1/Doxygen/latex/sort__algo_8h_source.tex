@@ -1,0 +1,89 @@
+\doxysection{sort\+\_\+algo.\+h}
+\hypertarget{sort__algo_8h_source}{}\label{sort__algo_8h_source}\mbox{\hyperlink{sort__algo_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ }
+\DoxyCodeLine{00007\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sort__algo_8h_a110bb9c0a9f07138457f07ed46deb9ec}{merge}}(std::vector<T>\&\ a,\ \textcolor{keywordtype}{long}\ low,\ \textcolor{keywordtype}{long}\ mid,\ \textcolor{keywordtype}{long}\ high)\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ std::vector<T>\ b;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{long}\ left\_index\ =\ low;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{long}\ right\_index\ =\ mid\ +\ 1;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{while}\ (left\_index\ <=\ mid\ \&\&\ right\_index\ <=\ high)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a[left\_index]\ <=\ a[right\_index])\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ b.push\_back(a[left\_index]);}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ left\_index++;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ b.push\_back(a[right\_index]);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ right\_index++;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{while}\ (left\_index\ <=\ mid)\ b.push\_back(a[left\_index++]);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{while}\ (right\_index\ <=\ high)\ b.push\_back(a[right\_index++]);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{long}\ k\ =\ 0;\ k\ <\ b.size();\ k++)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ a[k\ +\ low]\ =\ b[k];}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ }
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sort__algo_8h_af468b4a0c76d9f1fb34af054c4a636ca}{merge\_sort}}(std::vector<T>\&\ a,\ \textcolor{keywordtype}{long}\ low,\ \textcolor{keywordtype}{long}\ high)\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (low\ <\ high)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ mid\ =\ low\ +\ (high\ -\/\ low)\ /\ 2;\ \textcolor{comment}{//\ избегаем\ переполнения}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort__algo_8h_af468b4a0c76d9f1fb34af054c4a636ca}{merge\_sort}}(a,\ low,\ mid);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort__algo_8h_af468b4a0c76d9f1fb34af054c4a636ca}{merge\_sort}}(a,\ mid+1,\ high);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort__algo_8h_a110bb9c0a9f07138457f07ed46deb9ec}{merge}}(a,\ low,\ mid,\ high);}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ }
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sort__algo_8h_a5d1c6d06572b803b83f2b4b4b58c1d18}{quick\_sort}}(std::vector<T>\&\ a,\ \textcolor{keywordtype}{long}\ low,\ \textcolor{keywordtype}{long}\ high)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (low\ >=\ high)\ \textcolor{keywordflow}{return};\ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{long}\ i\ =\ low;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{long}\ j\ =\ high;}
+\DoxyCodeLine{00048\ \ \ \ \ T\ p\ =\ a[low\ +\ (high\ -\/\ low)\ /\ 2];\ }
+\DoxyCodeLine{00049\ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <=\ j)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (a[i]\ <\ p)\ i++;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (a[j]\ >\ p)\ j-\/-\/;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <=\ j)\ std::swap(a[i++],\ a[j-\/-\/]);}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{if}\ (low\ <\ j)\ \mbox{\hyperlink{sort__algo_8h_a5d1c6d06572b803b83f2b4b4b58c1d18}{quick\_sort}}(a,\ low,\ j);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ high)\ \mbox{\hyperlink{sort__algo_8h_a5d1c6d06572b803b83f2b4b4b58c1d18}{quick\_sort}}(a,\ i,\ high);}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sort__algo_8h_a8af7e00770fd2423a3a88c78184c751c}{down\_heap}}(std::vector<T>\&\ a,\ \textcolor{keywordtype}{long}\ k,\ \textcolor{keywordtype}{long}\ n)\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{while}\ (2\ *\ k\ +\ 1\ <\ n)\ \{\ \textcolor{comment}{//пока\ есть\ потомки}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ child\ =\ 2*k\ +\ 1;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (child\ +\ 1\ <\ n\ \&\&\ a[child]\ <\ a[child\ +\ 1])\ child++;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a[k]\ >=\ a[child])\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ std::swap(a[k],\ a[child]);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ k\ =\ child;\ \textcolor{comment}{//\ далее\ будут\ сравнения\ с\ потомками\ на\ один\ уровень\ ниже}}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ \textcolor{comment}{//\ строим\ пирамиду,\ проверяем\ все\ вершины,\ у\ которых\ есть\ потомок}}
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sort__algo_8h_abf927cddf492ea5f0b1fc8dc1f194e38}{build\_heap}}(std::vector<T>\&\ a,\ \textcolor{keywordtype}{long}\ n)\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{long}\ i\ =\ n\ /\ 2\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)\ \mbox{\hyperlink{sort__algo_8h_a8af7e00770fd2423a3a88c78184c751c}{down\_heap}}(a,\ i,\ n);}
+\DoxyCodeLine{00079\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ }
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sort__algo_8h_ac46eee67c7596c3e7a20f78924af2d7a}{heap\_sort}}(std::vector<T>\&\ a)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{long}\ size\ =\ a.size();}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{sort__algo_8h_abf927cddf492ea5f0b1fc8dc1f194e38}{build\_heap}}(a,\ size);\ \textcolor{comment}{//\ начальная\ пирамида}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{long}\ i\ =\ size\ -\/\ 1;\ i\ >\ 0;\ -\/-\/i)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ std::swap(a[0],\ a[i]);\ \ \textcolor{comment}{//\ перекидываем\ корень\ на\ последнее\ место}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort__algo_8h_a8af7e00770fd2423a3a88c78184c751c}{down\_heap}}(a,\ 0,\ i);\ \textcolor{comment}{//\ перестраиваем\ пирамиду\ без\ учета\ последних\ элементов}}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \}}
+
+\end{DoxyCode}

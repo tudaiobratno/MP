@@ -1,0 +1,262 @@
+\doxysection{search.\+h}
+\hypertarget{search_8h_source}{}\label{search_8h_source}\mbox{\hyperlink{search_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ std::vector<Player>\ \mbox{\hyperlink{search_8h_a75b6cf7ec8cc7b5045779c68a2348046}{linear\_search}}(\textcolor{keyword}{const}\ std::vector<Player>\&\ players,\ \textcolor{keyword}{const}\ std::string\&\ key)\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ std::vector<Player>\ result;\ \textcolor{comment}{//Итоговой\ вектор\ игроков}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classPlayer}{Player}}\&\ player\ :\ players)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (player.country\ ==\ key)\ result.push\_back(player);\ \ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ \}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00015\ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structBinaryTreeNode}{BinaryTreeNode}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player}}\ \mbox{\hyperlink{structBinaryTreeNode_a461a6616d50a46ff7dbf882be3b3b2b7}{data}};}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{structBinaryTreeNode}{BinaryTreeNode}}*\ \mbox{\hyperlink{structBinaryTreeNode_a98cd73291dd746f8bc7e9e4971eea4c9}{left}};}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{structBinaryTreeNode}{BinaryTreeNode}}*\ \mbox{\hyperlink{structBinaryTreeNode_ab4b171e7ffc4c67287c94baeb46b7d4c}{right}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{structBinaryTreeNode_a7bb04c9f4e0124b34bea4a9e4f5540ea}{BinaryTreeNode}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPlayer}{Player}}\&\ player)\ :\ \mbox{\hyperlink{structBinaryTreeNode_a461a6616d50a46ff7dbf882be3b3b2b7}{data}}(player),\ \mbox{\hyperlink{structBinaryTreeNode_a98cd73291dd746f8bc7e9e4971eea4c9}{left}}(nullptr),\ \mbox{\hyperlink{structBinaryTreeNode_ab4b171e7ffc4c67287c94baeb46b7d4c}{right}}(nullptr)\ \{\}}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBinarySearchTree}{BinarySearchTree}}\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBinaryTreeNode}{BinaryTreeNode}}*\ \mbox{\hyperlink{classBinarySearchTree_a8b6d1ca6d0065bb79feac4045515fcf2}{root}};\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBinaryTreeNode}{BinaryTreeNode}}*\ \mbox{\hyperlink{classBinarySearchTree_ace0ae70a4d7d9e00314807d205352a1d}{insert}}(\mbox{\hyperlink{structBinaryTreeNode}{BinaryTreeNode}}*\ node,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classPlayer}{Player}}\&\ player)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!node)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structBinaryTreeNode}{BinaryTreeNode}}(player);\ \textcolor{comment}{//Если\ вершина\ является\ листом}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (player.\mbox{\hyperlink{classPlayer_ad3897c836b4550a21d5fd411b06050df}{country}}\ <\ node-\/>\mbox{\hyperlink{structBinaryTreeNode_a461a6616d50a46ff7dbf882be3b3b2b7}{data}}.\mbox{\hyperlink{classPlayer_ad3897c836b4550a21d5fd411b06050df}{country}})\ node-\/>\mbox{\hyperlink{structBinaryTreeNode_a98cd73291dd746f8bc7e9e4971eea4c9}{left}}\ =\ \mbox{\hyperlink{classBinarySearchTree_ace0ae70a4d7d9e00314807d205352a1d}{insert}}(node-\/>\mbox{\hyperlink{structBinaryTreeNode_a98cd73291dd746f8bc7e9e4971eea4c9}{left}},\ player);\ \textcolor{comment}{//Если\ ключ\ для\ вершины\ меньше,\ чем\ тот,\ что\ уже\ есть\ в\ вершине,\ отправляем\ налево}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ node-\/>\mbox{\hyperlink{structBinaryTreeNode_ab4b171e7ffc4c67287c94baeb46b7d4c}{right}}\ =\ \mbox{\hyperlink{classBinarySearchTree_ace0ae70a4d7d9e00314807d205352a1d}{insert}}(node-\/>\mbox{\hyperlink{structBinaryTreeNode_ab4b171e7ffc4c67287c94baeb46b7d4c}{right}},\ player);\ \textcolor{comment}{//Иначе\ направляем\ направо}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ node;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBinarySearchTree_a5b9bf36a8b7352882112ebcd49e1b5bb}{find\_elemets\_by\_key}}(\mbox{\hyperlink{structBinaryTreeNode}{BinaryTreeNode}}*\ node,\ \textcolor{keyword}{const}\ std::string\&\ key,\ std::vector<Player>\&\ result)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!node)\ \textcolor{keywordflow}{return};\ \textcolor{comment}{//Дошли\ до\ листа}}
+\DoxyCodeLine{00049\ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node-\/>\mbox{\hyperlink{structBinaryTreeNode_a461a6616d50a46ff7dbf882be3b3b2b7}{data}}.\mbox{\hyperlink{classPlayer_ad3897c836b4550a21d5fd411b06050df}{country}}\ ==\ key)\ \{\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(node-\/>\mbox{\hyperlink{structBinaryTreeNode_a461a6616d50a46ff7dbf882be3b3b2b7}{data}});\textcolor{comment}{//\ Если\ значение\ равно,\ нужно\ добавить\ в\ список}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBinarySearchTree_a5b9bf36a8b7352882112ebcd49e1b5bb}{find\_elemets\_by\_key}}(node-\/>\mbox{\hyperlink{structBinaryTreeNode_ab4b171e7ffc4c67287c94baeb46b7d4c}{right}},\ key,\ result);\ \textcolor{comment}{//Продолжаем\ поиск\ справа}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ <\ node-\/>data.country)\ \mbox{\hyperlink{classBinarySearchTree_a5b9bf36a8b7352882112ebcd49e1b5bb}{find\_elemets\_by\_key}}(node-\/>\mbox{\hyperlink{structBinaryTreeNode_a98cd73291dd746f8bc7e9e4971eea4c9}{left}},\ key,\ result);\ \textcolor{comment}{//Если\ значениие\ ключа\ меньше,\ чем\ у\ текущего\ игрока,\ идем\ налево}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \mbox{\hyperlink{classBinarySearchTree_a5b9bf36a8b7352882112ebcd49e1b5bb}{find\_elemets\_by\_key}}(node-\/>\mbox{\hyperlink{structBinaryTreeNode_ab4b171e7ffc4c67287c94baeb46b7d4c}{right}},\ key,\ result);\ \textcolor{comment}{//\ Иначе\ ищем\ справа}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBinarySearchTree_a5351a78a161520116785f8eefbb91183}{BinarySearchTree}}()\ :\ \mbox{\hyperlink{classBinarySearchTree_a8b6d1ca6d0065bb79feac4045515fcf2}{root}}(nullptr)\ \{\}\ \textcolor{comment}{//\ Создание\ пустого\ дерева}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBinarySearchTree_a48bf417d8f3c7412dc350be7b1087b68}{insert}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPlayer}{Player}}\&\ player)\ \{\ \textcolor{comment}{//Вставка\ без\ вершины}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBinarySearchTree_a8b6d1ca6d0065bb79feac4045515fcf2}{root}}\ =\ \mbox{\hyperlink{classBinarySearchTree_ace0ae70a4d7d9e00314807d205352a1d}{insert}}(\mbox{\hyperlink{classBinarySearchTree_a8b6d1ca6d0065bb79feac4045515fcf2}{root}},\ player);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ std::vector<Player>\ \mbox{\hyperlink{classBinarySearchTree_a7cc15a6dfe38d3570ab6a50001c98b67}{find\_elemets\_by\_key}}(\textcolor{keyword}{const}\ std::string\&\ key)\ \{\ \textcolor{comment}{//Поиск\ по\ ключу}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Player>\ result;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBinarySearchTree_a5b9bf36a8b7352882112ebcd49e1b5bb}{find\_elemets\_by\_key}}(\mbox{\hyperlink{classBinarySearchTree_a8b6d1ca6d0065bb79feac4045515fcf2}{root}},\ key,\ result);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRBTreeNode}{RBTreeNode}}\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player}}\ \mbox{\hyperlink{structRBTreeNode_af219f96c1e0c00a4ab55265f72f7e7f7}{data}};}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{structRBTreeNode}{RBTreeNode}}*\ \mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}};}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{structRBTreeNode}{RBTreeNode}}*\ \mbox{\hyperlink{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}{right}};}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{structRBTreeNode}{RBTreeNode}}*\ \mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}};}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}\ =\ 1;\ ;\ \textcolor{comment}{//\ True\ -\/\ красная\ вершина,\ False\ -\/\ черная}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{structRBTreeNode_a9245a2787e7905ad12b2a90c9149fd7d}{RBTreeNode}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPlayer}{Player}}\&\ player)\ :\ \mbox{\hyperlink{structRBTreeNode_af219f96c1e0c00a4ab55265f72f7e7f7}{data}}(player),\ \mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}}(nullptr),\ \mbox{\hyperlink{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}{right}}(nullptr),\ \mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}(nullptr),\ \mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}(1)\ \{\}}
+\DoxyCodeLine{00085\ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRBTree}{RBTree}}\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structRBTreeNode}{RBTreeNode}}*\ \mbox{\hyperlink{classRBTree_a95ffc7a4fcd4227f77b357b441808b7f}{root}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRBTree_aa648467ccac77a523f3f10e741f4020f}{insert}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPlayer}{Player}}\&\ player)\{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structRBTreeNode}{RBTreeNode}}*\ new\_node\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structRBTreeNode}{RBTreeNode}}(player);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structRBTreeNode}{RBTreeNode}}*\ parent\_of\_new\_node\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structRBTreeNode}{RBTreeNode}}*\ node\_to\_find\_place\ =\ \mbox{\hyperlink{classRBTree_a95ffc7a4fcd4227f77b357b441808b7f}{root}};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (node\_to\_find\_place)\ \{\ \textcolor{comment}{//пока\ не\ дошли\ до\ листа}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parent\_of\_new\_node\ =\ node\_to\_find\_place;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_node-\/>\mbox{\hyperlink{structRBTreeNode_af219f96c1e0c00a4ab55265f72f7e7f7}{data}}.\mbox{\hyperlink{classPlayer_ad3897c836b4550a21d5fd411b06050df}{country}}\ <\ node\_to\_find\_place-\/>\mbox{\hyperlink{structRBTreeNode_af219f96c1e0c00a4ab55265f72f7e7f7}{data}}.\mbox{\hyperlink{classPlayer_ad3897c836b4550a21d5fd411b06050df}{country}})\ node\_to\_find\_place\ =\ node\_to\_find\_place-\/>\mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}};\ \textcolor{comment}{//ключ\ меньше,\ поэтому\ идем\ влево}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ node\_to\_find\_place\ =\ node\_to\_find\_place-\/>\mbox{\hyperlink{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}{right}};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ new\_node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}\ =\ parent\_of\_new\_node;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!parent\_of\_new\_node)\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRBTree_a95ffc7a4fcd4227f77b357b441808b7f}{root}}\ =\ new\_node;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRBTree_a95ffc7a4fcd4227f77b357b441808b7f}{root}}-\/>\mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}\ =\ 0;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (new\_node-\/>\mbox{\hyperlink{structRBTreeNode_af219f96c1e0c00a4ab55265f72f7e7f7}{data}}.\mbox{\hyperlink{classPlayer_ad3897c836b4550a21d5fd411b06050df}{country}}\ <\ parent\_of\_new\_node-\/>\mbox{\hyperlink{structRBTreeNode_af219f96c1e0c00a4ab55265f72f7e7f7}{data}}.\mbox{\hyperlink{classPlayer_ad3897c836b4550a21d5fd411b06050df}{country}})\ parent\_of\_new\_node-\/>\mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}}\ =\ new\_node;\ \textcolor{comment}{//добавляем\ сына\ родителю}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ parent\_of\_new\_node-\/>\mbox{\hyperlink{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}{right}}\ =\ new\_node;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRBTree_ac3b61bc10e4b5af54033373583e910c6}{fix\_insert}}(new\_node);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRBTree_ae6dac8ff25ff2243eb0ac549468dc8e4}{rotate\_left}}(\mbox{\hyperlink{structRBTreeNode}{RBTreeNode}}*\ node)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structRBTreeNode}{RBTreeNode}}*\ node\_right\_son\ =\ node-\/>\mbox{\hyperlink{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}{right}};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>\mbox{\hyperlink{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}{right}}\ =\ node\_right\_son-\/>\mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node\_right\_son-\/>\mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}}\ !=\ \textcolor{keyword}{nullptr})\ node\_right\_son-\/>\mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}}-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}\ =\ node;}
+\DoxyCodeLine{00122\ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ node\_right\_son-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}\ =\ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}};}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}\ ==\ \textcolor{keyword}{nullptr})\ \mbox{\hyperlink{classRBTree_a95ffc7a4fcd4227f77b357b441808b7f}{root}}\ =\ node\_right\_son;\ \ \textcolor{comment}{//\ node\ был\ корнем}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (node\ ==\ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}})}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}}\ =\ node\_right\_son;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}{right}}\ =\ node\_right\_son;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ node\_right\_son-\/>\mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}}\ =\ node;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}\ =\ node\_right\_son;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRBTree_a270ca53041d7da8438d729d6a7b2cc50}{rotate\_right}}(\mbox{\hyperlink{structRBTreeNode}{RBTreeNode}}*\ node)\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structRBTreeNode}{RBTreeNode}}*\ node\_left\_son\ =\ node-\/>\mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>\mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}}\ =\ node\_left\_son-\/>\mbox{\hyperlink{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}{right}};}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node\_left\_son-\/>\mbox{\hyperlink{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}{right}}\ !=\ \textcolor{keyword}{nullptr})\ node\_left\_son-\/>\mbox{\hyperlink{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}{right}}-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}\ =\ node;\ \ \textcolor{comment}{//\ меняем\ отца}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ node\_left\_son-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}\ =\ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}};}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}\ ==\ \textcolor{keyword}{nullptr})\ \mbox{\hyperlink{classRBTree_a95ffc7a4fcd4227f77b357b441808b7f}{root}}\ =\ node\_left\_son;\ \ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (node\ ==\ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}})\ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}}\ =\ node\_left\_son;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}{right}}\ =\ node\_left\_son;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ node\_left\_son-\/>\mbox{\hyperlink{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}{right}}\ =\ node;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}\ =\ node\_left\_son;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRBTree_ac3b61bc10e4b5af54033373583e910c6}{fix\_insert}}(\mbox{\hyperlink{structRBTreeNode}{RBTreeNode}}*\ node)\{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structRBTreeNode}{RBTreeNode}}*\ uncle\_node;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRBTree_a95ffc7a4fcd4227f77b357b441808b7f}{root}}-\/>\mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}\ =\ 0;}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (node\ !=\ \mbox{\hyperlink{classRBTree_a95ffc7a4fcd4227f77b357b441808b7f}{root}}\ \&\&\ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}\ ==\ 1)\{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}\ ==\ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}})\ \{\ \textcolor{comment}{//Если\ отец\ -\/\ левый\ ребенок}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uncle\_node\ =\ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}{right}};}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (uncle\_node\ \&\&\ uncle\_node-\/>\mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}\ ==\ 1)\{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}\ =\ 0;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uncle\_node-\/>\mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}\ =\ 0;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}\ =\ 1;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node\ =\ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}};}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node\ ==\ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}{right}})\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node\ =\ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}};}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRBTree_ae6dac8ff25ff2243eb0ac549468dc8e4}{rotate\_left}}(node);}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}\ =\ 0;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}\ =\ 1;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRBTree_a270ca53041d7da8438d729d6a7b2cc50}{rotate\_right}}(node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}});}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uncle\_node\ =\ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}};}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (uncle\_node\ \&\&\ uncle\_node-\/>\mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}\ ==\ 1)\{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}\ =\ 0;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uncle\_node-\/>\mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}\ =\ 0;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}\ =\ 1;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node\ =\ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}};}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node\ ==\ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}})\{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node\ =\ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}};}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRBTree_a270ca53041d7da8438d729d6a7b2cc50}{rotate\_right}}(node);}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}\ =\ 0;}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}\ =\ 1;}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRBTree_ae6dac8ff25ff2243eb0ac549468dc8e4}{rotate\_left}}(node-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}-\/>\mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}});}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRBTree_a95ffc7a4fcd4227f77b357b441808b7f}{root}}-\/>\mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}}\ =\ 0;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRBTree_a0de09a4af28ee26b862fc066b5e035aa}{dfs\_searh\_country}}(\mbox{\hyperlink{structRBTreeNode}{RBTreeNode}}*\ node,\ \textcolor{keyword}{const}\ std::string\&\ key,\ std::vector<RBTreeNode*>\&\ result)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (key\ ==\ node-\/>\mbox{\hyperlink{structRBTreeNode_af219f96c1e0c00a4ab55265f72f7e7f7}{data}}.\mbox{\hyperlink{classPlayer_ad3897c836b4550a21d5fd411b06050df}{country}})\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(node);}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRBTree_a0de09a4af28ee26b862fc066b5e035aa}{dfs\_searh\_country}}(node-\/>\mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}},\ key,\ result);}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRBTree_a0de09a4af28ee26b862fc066b5e035aa}{dfs\_searh\_country}}(node-\/>\mbox{\hyperlink{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}{right}},\ key,\ result);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ <\ node-\/>data.country)\ \mbox{\hyperlink{classRBTree_a0de09a4af28ee26b862fc066b5e035aa}{dfs\_searh\_country}}(node-\/>\mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}},\ key,\ result);}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \mbox{\hyperlink{classRBTree_a0de09a4af28ee26b862fc066b5e035aa}{dfs\_searh\_country}}(node-\/>\mbox{\hyperlink{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}{right}},\ key,\ result);}
+\DoxyCodeLine{00215\ \ \ \ \ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ std::vector<Player>\ \mbox{\hyperlink{classRBTree_aabc0cb73b731bcccd173f40af5ebddab}{RB\_search}}(\textcolor{keyword}{const}\ std::string\&\ key)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Player>\ result;}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<RBTreeNode*>\ node\_list;}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRBTree_a0de09a4af28ee26b862fc066b5e035aa}{dfs\_searh\_country}}(\mbox{\hyperlink{classRBTree_a95ffc7a4fcd4227f77b357b441808b7f}{root}},\ key,\ node\_list);}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{structRBTreeNode}{RBTreeNode}}*\ node\ :\ node\_list)\ result.push\_back(node-\/>data);}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \ \ \ \ \};}
+\DoxyCodeLine{00230\ \ \ \ \ }
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00233\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structEntry}{Entry}}\ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player}}\ \mbox{\hyperlink{structEntry_a90fd6da9bff10635a120a15f8461e4a7}{player}};}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structEntry_a863df330d3ed7762501dadb4b290aa12}{occupied}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00236\ \};}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00239\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHashTable}{HashTable}}\ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ std::vector<Entry>\ \mbox{\hyperlink{classHashTable_a78df07b6cb06f7fcd56645aa02be47e5}{table}};}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classHashTable_ad732056fce42df5162c810b4dd28fca1}{size}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classHashTable_af44def5c1c574d6d05c6b2ceb4475941}{collision\_number}}\ =\ 0;}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classHashTable_aafdcbc20be92e7f6ca23073d938ef7fd}{hash\_function}}(\textcolor{keyword}{const}\ std::string\&\ key)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ hash\ =\ 0;}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ key.length();\ i++)\ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hash\ +=\ (\textcolor{keywordtype}{unsigned}\ char)(key[i]);}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hash\ -\/=\ (hash\ <<\ 13)\ |\ (hash\ >>\ 19);}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hash\ \%\ \mbox{\hyperlink{classHashTable_ad732056fce42df5162c810b4dd28fca1}{size}};}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00259\ \ \ \ \ }
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classHashTable_a693efedbc801958def4524de471b4e54}{prob\_sequence}}(\textcolor{keywordtype}{int}\ hash,\ \textcolor{keywordtype}{int}\ attempt)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (hash\ +\ attempt\ *\ attempt)\ \%\ \mbox{\hyperlink{classHashTable_ad732056fce42df5162c810b4dd28fca1}{size}};}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00267\ \ \ \ \ }
+\DoxyCodeLine{00268\ \ \ \ \ }
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHashTable_ad34603ecbe631c2609cf8bf6eb0e4234}{HashTable}}(\textcolor{keywordtype}{int}\ sz)\ :\ \mbox{\hyperlink{classHashTable_ad732056fce42df5162c810b4dd28fca1}{size}}(sz),\ \mbox{\hyperlink{classHashTable_a78df07b6cb06f7fcd56645aa02be47e5}{table}}(sz)\ \{\}}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHashTable_a47e014a4d4d4211e9d2e7647690590ef}{insert}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPlayer}{Player}}\&\ player)\ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ key\ =\ player.\mbox{\hyperlink{classPlayer_ad3897c836b4550a21d5fd411b06050df}{country}};\ \ \textcolor{comment}{//\ Ключом\ будет\ страна\ игрока}}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ key\_hash\ =\ \mbox{\hyperlink{classHashTable_aafdcbc20be92e7f6ca23073d938ef7fd}{hash\_function}}(key);}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ attempt\ =\ 0;}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{classHashTable_a693efedbc801958def4524de471b4e54}{prob\_sequence}}(key\_hash,\ attempt++);\ \textcolor{comment}{//вычисляем\ позицию\ в\ хэш\ таблице}}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classHashTable_a78df07b6cb06f7fcd56645aa02be47e5}{table}}[i].occupied)\ \{\ \textcolor{comment}{//\ если\ позиция\ еще\ не\ занята}}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHashTable_a78df07b6cb06f7fcd56645aa02be47e5}{table}}[i].player\ =\ player;}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHashTable_a78df07b6cb06f7fcd56645aa02be47e5}{table}}[i].occupied\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classHashTable_a78df07b6cb06f7fcd56645aa02be47e5}{table}}[i].player.\mbox{\hyperlink{classPlayer_ad3897c836b4550a21d5fd411b06050df}{country}}\ !=\ key)\ \mbox{\hyperlink{classHashTable_af44def5c1c574d6d05c6b2ceb4475941}{collision\_number}}++;}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ std::vector<Player>\ \mbox{\hyperlink{classHashTable_a2b8847e5f3c0fe2ec60e2ddc6bbb99e4}{search\_hash}}(\textcolor{keyword}{const}\ std::string\&\ key)\ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Player>\ result;}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ hash\ =\ \mbox{\hyperlink{classHashTable_aafdcbc20be92e7f6ca23073d938ef7fd}{hash\_function}}(key);}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ attempt\ =\ 0;}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (attempt\ <\ \mbox{\hyperlink{classHashTable_ad732056fce42df5162c810b4dd28fca1}{size}})\ \{}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{classHashTable_a693efedbc801958def4524de471b4e54}{prob\_sequence}}(hash,\ attempt++);}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classHashTable_a78df07b6cb06f7fcd56645aa02be47e5}{table}}[i].occupied)\ \textcolor{keywordflow}{break};\ \textcolor{comment}{//Если\ клетка\ пуста,\ то\ останавливаемся}}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classHashTable_a78df07b6cb06f7fcd56645aa02be47e5}{table}}[i].player.country\ ==\ key)\ result.push\_back(\mbox{\hyperlink{classHashTable_a78df07b6cb06f7fcd56645aa02be47e5}{table}}[i].player);\ }
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ в\ клетке\ не\ всегда\ находится\ элемент\ с\ нужным\ ключом\ }}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00304\ \ \ \ \ }
+\DoxyCodeLine{00305\ \ \};}
+\DoxyCodeLine{00306\ \ \ \ \ }
+\DoxyCodeLine{00307\ \ \ \ \ }
+\DoxyCodeLine{00308\ \ \ \ \ }
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ }
+
+\end{DoxyCode}

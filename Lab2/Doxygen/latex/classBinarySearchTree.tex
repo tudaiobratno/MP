@@ -1,0 +1,114 @@
+\doxysection{Binary\+Search\+Tree Class Reference}
+\hypertarget{classBinarySearchTree}{}\label{classBinarySearchTree}\index{BinarySearchTree@{BinarySearchTree}}
+
+
+Класс бинарного дерева поиска  
+
+
+
+
+{\ttfamily \#include $<$search.\+h$>$}
+
+
+
+Collaboration diagram for Binary\+Search\+Tree\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{classBinarySearchTree__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structBinaryTreeNode}{Binary\+Tree\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classBinarySearchTree_ace0ae70a4d7d9e00314807d205352a1d}{insert}} (\mbox{\hyperlink{structBinaryTreeNode}{Binary\+Tree\+Node}} \texorpdfstring{$\ast$}{*}node, const \mbox{\hyperlink{classPlayer}{Player}} \&player)
+\begin{DoxyCompactList}\small\item\em Рекурсивная функция вставки вершины в бинарное дерево \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBinarySearchTree_a5b9bf36a8b7352882112ebcd49e1b5bb}{find\+\_\+elemets\+\_\+by\+\_\+key}} (\mbox{\hyperlink{structBinaryTreeNode}{Binary\+Tree\+Node}} \texorpdfstring{$\ast$}{*}node, const std\+::string \&key, std\+::vector$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&result)
+\begin{DoxyCompactList}\small\item\em Поиск всех игроков из страны по ключю key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBinarySearchTree_a5351a78a161520116785f8eefbb91183}{Binary\+Search\+Tree}} ()
+\item 
+void \mbox{\hyperlink{classBinarySearchTree_a48bf417d8f3c7412dc350be7b1087b68}{insert}} (const \mbox{\hyperlink{classPlayer}{Player}} \&player)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \mbox{\hyperlink{classBinarySearchTree_a7cc15a6dfe38d3570ab6a50001c98b67}{find\+\_\+elemets\+\_\+by\+\_\+key}} (const std\+::string \&key)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structBinaryTreeNode}{Binary\+Tree\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classBinarySearchTree_a8b6d1ca6d0065bb79feac4045515fcf2}{root}}
+\begin{DoxyCompactList}\small\item\em Корень дерева \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс бинарного дерева поиска 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBinarySearchTree_a5351a78a161520116785f8eefbb91183}\label{classBinarySearchTree_a5351a78a161520116785f8eefbb91183} 
+\index{BinarySearchTree@{BinarySearchTree}!BinarySearchTree@{BinarySearchTree}}
+\index{BinarySearchTree@{BinarySearchTree}!BinarySearchTree@{BinarySearchTree}}
+\doxysubsubsection{\texorpdfstring{BinarySearchTree()}{BinarySearchTree()}}
+{\footnotesize\ttfamily Binary\+Search\+Tree\+::\+Binary\+Search\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBinarySearchTree_a5b9bf36a8b7352882112ebcd49e1b5bb}\label{classBinarySearchTree_a5b9bf36a8b7352882112ebcd49e1b5bb} 
+\index{BinarySearchTree@{BinarySearchTree}!find\_elemets\_by\_key@{find\_elemets\_by\_key}}
+\index{find\_elemets\_by\_key@{find\_elemets\_by\_key}!BinarySearchTree@{BinarySearchTree}}
+\doxysubsubsection{\texorpdfstring{find\_elemets\_by\_key()}{find\_elemets\_by\_key()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Binary\+Search\+Tree\+::find\+\_\+elemets\+\_\+by\+\_\+key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBinaryTreeNode}{Binary\+Tree\+Node}} \texorpdfstring{$\ast$}{*}}]{node,  }\item[{const std\+::string \&}]{key,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \&}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Поиск всех игроков из страны по ключю key. 
+
+\Hypertarget{classBinarySearchTree_a7cc15a6dfe38d3570ab6a50001c98b67}\label{classBinarySearchTree_a7cc15a6dfe38d3570ab6a50001c98b67} 
+\index{BinarySearchTree@{BinarySearchTree}!find\_elemets\_by\_key@{find\_elemets\_by\_key}}
+\index{find\_elemets\_by\_key@{find\_elemets\_by\_key}!BinarySearchTree@{BinarySearchTree}}
+\doxysubsubsection{\texorpdfstring{find\_elemets\_by\_key()}{find\_elemets\_by\_key()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ Binary\+Search\+Tree\+::find\+\_\+elemets\+\_\+by\+\_\+key (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classBinarySearchTree_ace0ae70a4d7d9e00314807d205352a1d}\label{classBinarySearchTree_ace0ae70a4d7d9e00314807d205352a1d} 
+\index{BinarySearchTree@{BinarySearchTree}!insert@{insert}}
+\index{insert@{insert}!BinarySearchTree@{BinarySearchTree}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structBinaryTreeNode}{Binary\+Tree\+Node}} \texorpdfstring{$\ast$}{*} Binary\+Search\+Tree\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBinaryTreeNode}{Binary\+Tree\+Node}} \texorpdfstring{$\ast$}{*}}]{node,  }\item[{const \mbox{\hyperlink{classPlayer}{Player}} \&}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Рекурсивная функция вставки вершины в бинарное дерево 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Начальная вершина, от которой идет рекурсивная вставка \\
+\hline
+{\em player} & Элемент с данными \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Указатель на новую вершину 
+\end{DoxyReturn}
+\Hypertarget{classBinarySearchTree_a48bf417d8f3c7412dc350be7b1087b68}\label{classBinarySearchTree_a48bf417d8f3c7412dc350be7b1087b68} 
+\index{BinarySearchTree@{BinarySearchTree}!insert@{insert}}
+\index{insert@{insert}!BinarySearchTree@{BinarySearchTree}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Binary\+Search\+Tree\+::insert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPlayer}{Player}} \&}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classBinarySearchTree_a8b6d1ca6d0065bb79feac4045515fcf2}\label{classBinarySearchTree_a8b6d1ca6d0065bb79feac4045515fcf2} 
+\index{BinarySearchTree@{BinarySearchTree}!root@{root}}
+\index{root@{root}!BinarySearchTree@{BinarySearchTree}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structBinaryTreeNode}{Binary\+Tree\+Node}}\texorpdfstring{$\ast$}{*} Binary\+Search\+Tree\+::root}
+
+
+
+Корень дерева 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{search_8h}{search.\+h}}\end{DoxyCompactItemize}

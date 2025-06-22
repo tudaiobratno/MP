@@ -1,0 +1,163 @@
+\doxysection{Hash\+Table Class Reference}
+\hypertarget{classHashTable}{}\label{classHashTable}\index{HashTable@{HashTable}}
+
+
+Класс, реализующий хэш таблицу  
+
+
+
+
+{\ttfamily \#include $<$search.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classHashTable_aafdcbc20be92e7f6ca23073d938ef7fd}{hash\+\_\+function}} (const std\+::string \&key) const
+\begin{DoxyCompactList}\small\item\em Хэш функция \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classHashTable_a693efedbc801958def4524de471b4e54}{prob\+\_\+sequence}} (int hash, int attempt) const
+\begin{DoxyCompactList}\small\item\em Обработка коллизий (метод открыйто адресации) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHashTable_ad34603ecbe631c2609cf8bf6eb0e4234}{Hash\+Table}} (int sz)
+\item 
+void \mbox{\hyperlink{classHashTable_a47e014a4d4d4211e9d2e7647690590ef}{insert}} (const \mbox{\hyperlink{classPlayer}{Player}} \&player)
+\begin{DoxyCompactList}\small\item\em Вставка элемента \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \mbox{\hyperlink{classHashTable_a2b8847e5f3c0fe2ec60e2ddc6bbb99e4}{search\+\_\+hash}} (const std\+::string \&key)
+\begin{DoxyCompactList}\small\item\em Поиск по хэш таблице \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structEntry}{Entry}} $>$ \mbox{\hyperlink{classHashTable_a78df07b6cb06f7fcd56645aa02be47e5}{table}}
+\begin{DoxyCompactList}\small\item\em Массив элементов (сам элемент и занята клетка или нет) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classHashTable_ad732056fce42df5162c810b4dd28fca1}{size}}
+\begin{DoxyCompactList}\small\item\em Размер таблицы ~\newline
+ \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classHashTable_af44def5c1c574d6d05c6b2ceb4475941}{collision\+\_\+number}} = 0
+\begin{DoxyCompactList}\small\item\em Число коллизий ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс, реализующий хэш таблицу 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHashTable_ad34603ecbe631c2609cf8bf6eb0e4234}\label{classHashTable_ad34603ecbe631c2609cf8bf6eb0e4234} 
+\index{HashTable@{HashTable}!HashTable@{HashTable}}
+\index{HashTable@{HashTable}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{HashTable()}{HashTable()}}
+{\footnotesize\ttfamily Hash\+Table\+::\+Hash\+Table (\begin{DoxyParamCaption}\item[{int}]{sz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHashTable_aafdcbc20be92e7f6ca23073d938ef7fd}\label{classHashTable_aafdcbc20be92e7f6ca23073d938ef7fd} 
+\index{HashTable@{HashTable}!hash\_function@{hash\_function}}
+\index{hash\_function@{hash\_function}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{hash\_function()}{hash\_function()}}
+{\footnotesize\ttfamily int Hash\+Table\+::hash\+\_\+function (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Хэш функция 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Ключ поиска \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Значение хэш-\/функции 
+\end{DoxyReturn}
+\Hypertarget{classHashTable_a47e014a4d4d4211e9d2e7647690590ef}\label{classHashTable_a47e014a4d4d4211e9d2e7647690590ef} 
+\index{HashTable@{HashTable}!insert@{insert}}
+\index{insert@{insert}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Hash\+Table\+::insert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPlayer}{Player}} \&}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Вставка элемента 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classHashTable_a693efedbc801958def4524de471b4e54}\label{classHashTable_a693efedbc801958def4524de471b4e54} 
+\index{HashTable@{HashTable}!prob\_sequence@{prob\_sequence}}
+\index{prob\_sequence@{prob\_sequence}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{prob\_sequence()}{prob\_sequence()}}
+{\footnotesize\ttfamily int Hash\+Table\+::prob\+\_\+sequence (\begin{DoxyParamCaption}\item[{int}]{hash,  }\item[{int}]{attempt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Обработка коллизий (метод открыйто адресации) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash} & Значение хэша \\
+\hline
+{\em attempt} & Номер попытки \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Индекс, куда будет вставлен элемент 
+\end{DoxyReturn}
+\Hypertarget{classHashTable_a2b8847e5f3c0fe2ec60e2ddc6bbb99e4}\label{classHashTable_a2b8847e5f3c0fe2ec60e2ddc6bbb99e4} 
+\index{HashTable@{HashTable}!search\_hash@{search\_hash}}
+\index{search\_hash@{search\_hash}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{search\_hash()}{search\_hash()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ Hash\+Table\+::search\+\_\+hash (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Поиск по хэш таблице 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classHashTable_af44def5c1c574d6d05c6b2ceb4475941}\label{classHashTable_af44def5c1c574d6d05c6b2ceb4475941} 
+\index{HashTable@{HashTable}!collision\_number@{collision\_number}}
+\index{collision\_number@{collision\_number}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{collision\_number}{collision\_number}}
+{\footnotesize\ttfamily int Hash\+Table\+::collision\+\_\+number = 0}
+
+
+
+Число коллизий ~\newline
+ 
+
+\Hypertarget{classHashTable_ad732056fce42df5162c810b4dd28fca1}\label{classHashTable_ad732056fce42df5162c810b4dd28fca1} 
+\index{HashTable@{HashTable}!size@{size}}
+\index{size@{size}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily int Hash\+Table\+::size}
+
+
+
+Размер таблицы ~\newline
+ 
+
+\Hypertarget{classHashTable_a78df07b6cb06f7fcd56645aa02be47e5}\label{classHashTable_a78df07b6cb06f7fcd56645aa02be47e5} 
+\index{HashTable@{HashTable}!table@{table}}
+\index{table@{table}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{table}{table}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structEntry}{Entry}}$>$ Hash\+Table\+::table}
+
+
+
+Массив элементов (сам элемент и занята клетка или нет) 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{search_8h}{search.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,63 @@
+\doxysection{start.\+cpp File Reference}
+\hypertarget{start_8cpp}{}\label{start_8cpp}\index{start.cpp@{start.cpp}}
+
+
+Основной файл программы для тестирования сортировки игроков  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include "{}Player.\+h"{}}\newline
+{\ttfamily \#include "{}search.\+h"{}}\newline
+{\ttfamily \#include $<$map$>$}\newline
+Include dependency graph for start.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{start_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \mbox{\hyperlink{start_8cpp_abffba0e0bf5fd3b1eb4714712cd54da0}{get\+Players}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Считывает данные игроков из CSV-\/файла \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{start_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Тестирование файлов \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Основной файл программы для тестирования сортировки игроков 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{start_8cpp_abffba0e0bf5fd3b1eb4714712cd54da0}\label{start_8cpp_abffba0e0bf5fd3b1eb4714712cd54da0} 
+\index{start.cpp@{start.cpp}!getPlayers@{getPlayers}}
+\index{getPlayers@{getPlayers}!start.cpp@{start.cpp}}
+\doxysubsubsection{\texorpdfstring{getPlayers()}{getPlayers()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ get\+Players (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Считывает данные игроков из CSV-\/файла 
+
+\begin{DoxyReturn}{Returns}
+Вектор объектов \doxylink{classPlayer}{Player} 
+\end{DoxyReturn}
+\Hypertarget{start_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{start_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{start.cpp@{start.cpp}!main@{main}}
+\index{main@{main}!start.cpp@{start.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Тестирование файлов 
+

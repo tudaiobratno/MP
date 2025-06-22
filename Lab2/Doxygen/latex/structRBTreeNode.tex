@@ -1,0 +1,109 @@
+\doxysection{RBTree\+Node Struct Reference}
+\hypertarget{structRBTreeNode}{}\label{structRBTreeNode}\index{RBTreeNode@{RBTreeNode}}
+
+
+Структура вершины красно-\/черного дерева  
+
+
+
+
+{\ttfamily \#include $<$search.\+h$>$}
+
+
+
+Collaboration diagram for RBTree\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{structRBTreeNode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structRBTreeNode_a9245a2787e7905ad12b2a90c9149fd7d}{RBTree\+Node}} (const \mbox{\hyperlink{classPlayer}{Player}} \&player)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlayer}{Player}} \mbox{\hyperlink{structRBTreeNode_af219f96c1e0c00a4ab55265f72f7e7f7}{data}}
+\begin{DoxyCompactList}\small\item\em Данные \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}{left}}
+\begin{DoxyCompactList}\small\item\em Левый сын \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}{right}}
+\begin{DoxyCompactList}\small\item\em Правый сын \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}{parent}}
+\begin{DoxyCompactList}\small\item\em Отец \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structRBTreeNode_abead583184b81fccf627efc452a1049a}{color}} = 1
+\begin{DoxyCompactList}\small\item\em Цвет. Значение True -\/ красная вершина, иначе -\/ черная \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Структура вершины красно-\/черного дерева 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structRBTreeNode_a9245a2787e7905ad12b2a90c9149fd7d}\label{structRBTreeNode_a9245a2787e7905ad12b2a90c9149fd7d} 
+\index{RBTreeNode@{RBTreeNode}!RBTreeNode@{RBTreeNode}}
+\index{RBTreeNode@{RBTreeNode}!RBTreeNode@{RBTreeNode}}
+\doxysubsubsection{\texorpdfstring{RBTreeNode()}{RBTreeNode()}}
+{\footnotesize\ttfamily RBTree\+Node\+::\+RBTree\+Node (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPlayer}{Player}} \&}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structRBTreeNode_abead583184b81fccf627efc452a1049a}\label{structRBTreeNode_abead583184b81fccf627efc452a1049a} 
+\index{RBTreeNode@{RBTreeNode}!color@{color}}
+\index{color@{color}!RBTreeNode@{RBTreeNode}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily bool RBTree\+Node\+::color = 1}
+
+
+
+Цвет. Значение True -\/ красная вершина, иначе -\/ черная 
+
+\Hypertarget{structRBTreeNode_af219f96c1e0c00a4ab55265f72f7e7f7}\label{structRBTreeNode_af219f96c1e0c00a4ab55265f72f7e7f7} 
+\index{RBTreeNode@{RBTreeNode}!data@{data}}
+\index{data@{data}!RBTreeNode@{RBTreeNode}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPlayer}{Player}} RBTree\+Node\+::data}
+
+
+
+Данные 
+
+\Hypertarget{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b}\label{structRBTreeNode_a7dadcb9c314c434fb8c826e0a874ad3b} 
+\index{RBTreeNode@{RBTreeNode}!left@{left}}
+\index{left@{left}!RBTreeNode@{RBTreeNode}}
+\doxysubsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}}\texorpdfstring{$\ast$}{*} RBTree\+Node\+::left}
+
+
+
+Левый сын 
+
+\Hypertarget{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f}\label{structRBTreeNode_af945f85cbcc3baa7e00a52d87dd33e0f} 
+\index{RBTreeNode@{RBTreeNode}!parent@{parent}}
+\index{parent@{parent}!RBTreeNode@{RBTreeNode}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}}\texorpdfstring{$\ast$}{*} RBTree\+Node\+::parent}
+
+
+
+Отец 
+
+\Hypertarget{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd}\label{structRBTreeNode_abc28c5441aaf044e69201c8c6b803cdd} 
+\index{RBTreeNode@{RBTreeNode}!right@{right}}
+\index{right@{right}!RBTreeNode@{RBTreeNode}}
+\doxysubsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}}\texorpdfstring{$\ast$}{*} RBTree\+Node\+::right}
+
+
+
+Правый сын 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{search_8h}{search.\+h}}\end{DoxyCompactItemize}

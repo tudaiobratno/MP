@@ -1,0 +1,8 @@
+<map id="BinarySearchTree" name="BinarySearchTree">
+<area shape="rect" id="Node000001" title="Класс бинарного дерева поиска" alt="" coords="5,185,140,211"/>
+<area shape="rect" id="Node000002" href="$structBinaryTreeNode.html" title="Структура бинарного дерева поиска" alt="" coords="10,95,135,121"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,134,75,185,70,185,70,134"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="150,99,162,108,154,116,136,119,135,114,151,111,157,108,148,104"/>
+<area shape="rect" id="Node000003" href="$classPlayer.html" title=" " alt="" coords="41,5,104,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="75,44,75,95,70,95,70,44"/>
+</map>

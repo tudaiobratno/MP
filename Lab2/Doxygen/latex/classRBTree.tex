@@ -1,0 +1,158 @@
+\doxysection{RBTree Class Reference}
+\hypertarget{classRBTree}{}\label{classRBTree}\index{RBTree@{RBTree}}
+
+
+Класс красно-\/черного дерева  
+
+
+
+
+{\ttfamily \#include $<$search.\+h$>$}
+
+
+
+Collaboration diagram for RBTree\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classRBTree__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRBTree_aa648467ccac77a523f3f10e741f4020f}{insert}} (const \mbox{\hyperlink{classPlayer}{Player}} \&player)
+\begin{DoxyCompactList}\small\item\em Вставка вершины \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTree_ae6dac8ff25ff2243eb0ac549468dc8e4}{rotate\+\_\+left}} (\mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}} \texorpdfstring{$\ast$}{*}node)
+\begin{DoxyCompactList}\small\item\em Поворот влево \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTree_a270ca53041d7da8438d729d6a7b2cc50}{rotate\+\_\+right}} (\mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}} \texorpdfstring{$\ast$}{*}node)
+\begin{DoxyCompactList}\small\item\em Поворот вправо \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTree_ac3b61bc10e4b5af54033373583e910c6}{fix\+\_\+insert}} (\mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}} \texorpdfstring{$\ast$}{*}node)
+\begin{DoxyCompactList}\small\item\em Вставка с проверкой корректности свойств КЧД \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTree_a0de09a4af28ee26b862fc066b5e035aa}{dfs\+\_\+searh\+\_\+country}} (\mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}} \texorpdfstring{$\ast$}{*}node, const std\+::string \&key, std\+::vector$<$ \mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}} \texorpdfstring{$\ast$}{*} $>$ \&result) const
+\begin{DoxyCompactList}\small\item\em Поиск по КЧД \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \mbox{\hyperlink{classRBTree_aabc0cb73b731bcccd173f40af5ebddab}{RB\+\_\+search}} (const std\+::string \&key) const
+\begin{DoxyCompactList}\small\item\em Поиск по КЧД \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classRBTree_a95ffc7a4fcd4227f77b357b441808b7f}{root}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс красно-\/черного дерева 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRBTree_a0de09a4af28ee26b862fc066b5e035aa}\label{classRBTree_a0de09a4af28ee26b862fc066b5e035aa} 
+\index{RBTree@{RBTree}!dfs\_searh\_country@{dfs\_searh\_country}}
+\index{dfs\_searh\_country@{dfs\_searh\_country}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{dfs\_searh\_country()}{dfs\_searh\_country()}}
+{\footnotesize\ttfamily void RBTree\+::dfs\+\_\+searh\+\_\+country (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}} \texorpdfstring{$\ast$}{*}}]{node,  }\item[{const std\+::string \&}]{key,  }\item[{std\+::vector$<$ \mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}} \texorpdfstring{$\ast$}{*} $>$ \&}]{result }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Поиск по КЧД 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Вершина, с которой идет поиск \\
+\hline
+{\em key} & Ключ поиска \\
+\hline
+{\em result} & Вектор, в который записываются данные \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRBTree_ac3b61bc10e4b5af54033373583e910c6}\label{classRBTree_ac3b61bc10e4b5af54033373583e910c6} 
+\index{RBTree@{RBTree}!fix\_insert@{fix\_insert}}
+\index{fix\_insert@{fix\_insert}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{fix\_insert()}{fix\_insert()}}
+{\footnotesize\ttfamily void RBTree\+::fix\+\_\+insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}} \texorpdfstring{$\ast$}{*}}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Вставка с проверкой корректности свойств КЧД 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Вершина, на место которой вставляется текущая \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRBTree_aa648467ccac77a523f3f10e741f4020f}\label{classRBTree_aa648467ccac77a523f3f10e741f4020f} 
+\index{RBTree@{RBTree}!insert@{insert}}
+\index{insert@{insert}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void RBTree\+::insert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPlayer}{Player}} \&}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Вставка вершины 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Данные \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRBTree_aabc0cb73b731bcccd173f40af5ebddab}\label{classRBTree_aabc0cb73b731bcccd173f40af5ebddab} 
+\index{RBTree@{RBTree}!RB\_search@{RB\_search}}
+\index{RB\_search@{RB\_search}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{RB\_search()}{RB\_search()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ RBTree\+::\+RB\+\_\+search (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Поиск по КЧД 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Ключ поиска \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращаеи все вхождения элемента 
+\end{DoxyReturn}
+\Hypertarget{classRBTree_ae6dac8ff25ff2243eb0ac549468dc8e4}\label{classRBTree_ae6dac8ff25ff2243eb0ac549468dc8e4} 
+\index{RBTree@{RBTree}!rotate\_left@{rotate\_left}}
+\index{rotate\_left@{rotate\_left}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{rotate\_left()}{rotate\_left()}}
+{\footnotesize\ttfamily void RBTree\+::rotate\+\_\+left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}} \texorpdfstring{$\ast$}{*}}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Поворот влево 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Вершина, вокруг которой поворачивают \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRBTree_a270ca53041d7da8438d729d6a7b2cc50}\label{classRBTree_a270ca53041d7da8438d729d6a7b2cc50} 
+\index{RBTree@{RBTree}!rotate\_right@{rotate\_right}}
+\index{rotate\_right@{rotate\_right}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{rotate\_right()}{rotate\_right()}}
+{\footnotesize\ttfamily void RBTree\+::rotate\+\_\+right (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}} \texorpdfstring{$\ast$}{*}}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Поворот вправо 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Вершина, вокруг которой поворачивают \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classRBTree_a95ffc7a4fcd4227f77b357b441808b7f}\label{classRBTree_a95ffc7a4fcd4227f77b357b441808b7f} 
+\index{RBTree@{RBTree}!root@{root}}
+\index{root@{root}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structRBTreeNode}{RBTree\+Node}}\texorpdfstring{$\ast$}{*} RBTree\+::root = nullptr}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{search_8h}{search.\+h}}\end{DoxyCompactItemize}

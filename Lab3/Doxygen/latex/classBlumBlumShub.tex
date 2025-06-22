@@ -1,0 +1,146 @@
+\doxysection{Blum\+Blum\+Shub Class Reference}
+\hypertarget{classBlumBlumShub}{}\label{classBlumBlumShub}\index{BlumBlumShub@{BlumBlumShub}}
+
+
+Класс модифицированного генератора Блюм-\/Блюм-\/Шуба  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classBlumBlumShub_a9b376bc98ee4a2541f239ec575809325}{is\+\_\+prime}} (unsigned long long num)
+\begin{DoxyCompactList}\small\item\em Проверка, что число простое \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBlumBlumShub_a1fd6338977650e7512962a12b45a67d4}{is\+\_\+3\+\_\+mod\+\_\+4}} (unsigned long long num)
+\begin{DoxyCompactList}\small\item\em Проверка на значение по модулю 3. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBlumBlumShub_a4a3d7c2369749aa7bf0334ef33ddffaa}{Blum\+Blum\+Shub}} (unsigned long long \mbox{\hyperlink{classBlumBlumShub_ad38a53921f55133277b3273e37289242}{p}}, unsigned long long \mbox{\hyperlink{classBlumBlumShub_a5ea0ae581908086acd38bb4ec4f390ef}{q}}, unsigned long long \mbox{\hyperlink{classBlumBlumShub_afeedfbb36c660a78a487aef43114d486}{seed}})
+\item 
+bool \mbox{\hyperlink{classBlumBlumShub_a5e5b7f0adfa5e81a6e792f0b1977677e}{next\+\_\+bit}} ()
+\begin{DoxyCompactList}\small\item\em Генерация одного бита \end{DoxyCompactList}\item 
+unsigned long long \mbox{\hyperlink{classBlumBlumShub_a15cfe683887da5cda2e20f6f8e1e902b}{next\+\_\+number}} (int bits=13)
+\begin{DoxyCompactList}\small\item\em Генерация следующего числа (bits = 13) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long long \mbox{\hyperlink{classBlumBlumShub_ad38a53921f55133277b3273e37289242}{p}}
+\begin{DoxyCompactList}\small\item\em Простое p. \end{DoxyCompactList}\item 
+unsigned long long \mbox{\hyperlink{classBlumBlumShub_a5ea0ae581908086acd38bb4ec4f390ef}{q}}
+\begin{DoxyCompactList}\small\item\em Простое q. \end{DoxyCompactList}\item 
+unsigned long long \mbox{\hyperlink{classBlumBlumShub_ad89422a01f383a9862e346c17edfef62}{n}}
+\begin{DoxyCompactList}\small\item\em pq \end{DoxyCompactList}\item 
+unsigned long long \mbox{\hyperlink{classBlumBlumShub_afeedfbb36c660a78a487aef43114d486}{seed}}
+\begin{DoxyCompactList}\small\item\em Начальное значение \end{DoxyCompactList}\item 
+unsigned long long \mbox{\hyperlink{classBlumBlumShub_aa83da56af4c301b0401404ce747c976a}{current}}
+\begin{DoxyCompactList}\small\item\em Текущие состояние генератора \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс модифицированного генератора Блюм-\/Блюм-\/Шуба 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBlumBlumShub_a4a3d7c2369749aa7bf0334ef33ddffaa}\label{classBlumBlumShub_a4a3d7c2369749aa7bf0334ef33ddffaa} 
+\index{BlumBlumShub@{BlumBlumShub}!BlumBlumShub@{BlumBlumShub}}
+\index{BlumBlumShub@{BlumBlumShub}!BlumBlumShub@{BlumBlumShub}}
+\doxysubsubsection{\texorpdfstring{BlumBlumShub()}{BlumBlumShub()}}
+{\footnotesize\ttfamily Blum\+Blum\+Shub\+::\+Blum\+Blum\+Shub (\begin{DoxyParamCaption}\item[{unsigned long long}]{p,  }\item[{unsigned long long}]{q,  }\item[{unsigned long long}]{seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBlumBlumShub_a1fd6338977650e7512962a12b45a67d4}\label{classBlumBlumShub_a1fd6338977650e7512962a12b45a67d4} 
+\index{BlumBlumShub@{BlumBlumShub}!is\_3\_mod\_4@{is\_3\_mod\_4}}
+\index{is\_3\_mod\_4@{is\_3\_mod\_4}!BlumBlumShub@{BlumBlumShub}}
+\doxysubsubsection{\texorpdfstring{is\_3\_mod\_4()}{is\_3\_mod\_4()}}
+{\footnotesize\ttfamily bool Blum\+Blum\+Shub\+::is\+\_\+3\+\_\+mod\+\_\+4 (\begin{DoxyParamCaption}\item[{unsigned long long}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Проверка на значение по модулю 3. 
+
+\Hypertarget{classBlumBlumShub_a9b376bc98ee4a2541f239ec575809325}\label{classBlumBlumShub_a9b376bc98ee4a2541f239ec575809325} 
+\index{BlumBlumShub@{BlumBlumShub}!is\_prime@{is\_prime}}
+\index{is\_prime@{is\_prime}!BlumBlumShub@{BlumBlumShub}}
+\doxysubsubsection{\texorpdfstring{is\_prime()}{is\_prime()}}
+{\footnotesize\ttfamily bool Blum\+Blum\+Shub\+::is\+\_\+prime (\begin{DoxyParamCaption}\item[{unsigned long long}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Проверка, что число простое 
+
+\Hypertarget{classBlumBlumShub_a5e5b7f0adfa5e81a6e792f0b1977677e}\label{classBlumBlumShub_a5e5b7f0adfa5e81a6e792f0b1977677e} 
+\index{BlumBlumShub@{BlumBlumShub}!next\_bit@{next\_bit}}
+\index{next\_bit@{next\_bit}!BlumBlumShub@{BlumBlumShub}}
+\doxysubsubsection{\texorpdfstring{next\_bit()}{next\_bit()}}
+{\footnotesize\ttfamily bool Blum\+Blum\+Shub\+::next\+\_\+bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Генерация одного бита 
+
+\Hypertarget{classBlumBlumShub_a15cfe683887da5cda2e20f6f8e1e902b}\label{classBlumBlumShub_a15cfe683887da5cda2e20f6f8e1e902b} 
+\index{BlumBlumShub@{BlumBlumShub}!next\_number@{next\_number}}
+\index{next\_number@{next\_number}!BlumBlumShub@{BlumBlumShub}}
+\doxysubsubsection{\texorpdfstring{next\_number()}{next\_number()}}
+{\footnotesize\ttfamily unsigned long long Blum\+Blum\+Shub\+::next\+\_\+number (\begin{DoxyParamCaption}\item[{int}]{bits = {\ttfamily 13} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Генерация следующего числа (bits = 13) 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classBlumBlumShub_aa83da56af4c301b0401404ce747c976a}\label{classBlumBlumShub_aa83da56af4c301b0401404ce747c976a} 
+\index{BlumBlumShub@{BlumBlumShub}!current@{current}}
+\index{current@{current}!BlumBlumShub@{BlumBlumShub}}
+\doxysubsubsection{\texorpdfstring{current}{current}}
+{\footnotesize\ttfamily unsigned long long Blum\+Blum\+Shub\+::current}
+
+
+
+Текущие состояние генератора 
+
+\Hypertarget{classBlumBlumShub_ad89422a01f383a9862e346c17edfef62}\label{classBlumBlumShub_ad89422a01f383a9862e346c17edfef62} 
+\index{BlumBlumShub@{BlumBlumShub}!n@{n}}
+\index{n@{n}!BlumBlumShub@{BlumBlumShub}}
+\doxysubsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily unsigned long long Blum\+Blum\+Shub\+::n}
+
+
+
+pq 
+
+\Hypertarget{classBlumBlumShub_ad38a53921f55133277b3273e37289242}\label{classBlumBlumShub_ad38a53921f55133277b3273e37289242} 
+\index{BlumBlumShub@{BlumBlumShub}!p@{p}}
+\index{p@{p}!BlumBlumShub@{BlumBlumShub}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily unsigned long long Blum\+Blum\+Shub\+::p}
+
+
+
+Простое p. 
+
+\Hypertarget{classBlumBlumShub_a5ea0ae581908086acd38bb4ec4f390ef}\label{classBlumBlumShub_a5ea0ae581908086acd38bb4ec4f390ef} 
+\index{BlumBlumShub@{BlumBlumShub}!q@{q}}
+\index{q@{q}!BlumBlumShub@{BlumBlumShub}}
+\doxysubsubsection{\texorpdfstring{q}{q}}
+{\footnotesize\ttfamily unsigned long long Blum\+Blum\+Shub\+::q}
+
+
+
+Простое q. 
+
+\Hypertarget{classBlumBlumShub_afeedfbb36c660a78a487aef43114d486}\label{classBlumBlumShub_afeedfbb36c660a78a487aef43114d486} 
+\index{BlumBlumShub@{BlumBlumShub}!seed@{seed}}
+\index{seed@{seed}!BlumBlumShub@{BlumBlumShub}}
+\doxysubsubsection{\texorpdfstring{seed}{seed}}
+{\footnotesize\ttfamily unsigned long long Blum\+Blum\+Shub\+::seed}
+
+
+
+Начальное значение 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{random__generator_8cpp}{random\+\_\+generator.\+cpp}}\end{DoxyCompactItemize}

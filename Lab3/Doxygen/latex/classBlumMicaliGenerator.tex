@@ -1,0 +1,192 @@
+\doxysection{Blum\+Micali\+Generator Class Reference}
+\hypertarget{classBlumMicaliGenerator}{}\label{classBlumMicaliGenerator}\index{BlumMicaliGenerator@{BlumMicaliGenerator}}
+
+
+Модифицированный алгоритм Блюма-\/Микали  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classBlumMicaliGenerator_af09566bb97e654426ed068c532afa918}{is\+\_\+prime}} (unsigned long long num)
+\begin{DoxyCompactList}\small\item\em Алгоритм проверки числа на простоту \end{DoxyCompactList}\item 
+unsigned long long \mbox{\hyperlink{classBlumMicaliGenerator_a032709b20a0cf7223ec00ea7de1d2d4d}{find\+\_\+primitive\+\_\+root}} (unsigned long long \mbox{\hyperlink{classBlumMicaliGenerator_a075bb436818d89d2022151284ec46b14}{p}})
+\begin{DoxyCompactList}\small\item\em Поиск первообразных корней по простому модулю p. \end{DoxyCompactList}\item 
+unsigned long long \mbox{\hyperlink{classBlumMicaliGenerator_aed8d7ebcb0de0abb3fefe3dc04f36379}{modular\+\_\+pow}} (unsigned long long base, unsigned long long exp, unsigned long long mod)
+\begin{DoxyCompactList}\small\item\em Алгоритм быстрого возведения в степень по модулю \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBlumMicaliGenerator_a54d4d5e4a9ea0bdc4181f6778f6a0778}{Blum\+Micali\+Generator}} (unsigned long long prime)
+\item 
+bool \mbox{\hyperlink{classBlumMicaliGenerator_aeec53b773270fbafbd34ec23b21978d2}{next\+\_\+bit}} ()
+\begin{DoxyCompactList}\small\item\em Генерация следующего бита \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classBlumMicaliGenerator_adf54d07829f1b0ba676406e65d146ed2}{next\+\_\+number}} ()
+\begin{DoxyCompactList}\small\item\em Генерация следующего 24 битного числа \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlumMicaliGenerator_a46a4b52879ecd5670490235d99e14b79}{generate}} (std\+::vector$<$ unsigned int $>$ \&output, size\+\_\+t count)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long long \mbox{\hyperlink{classBlumMicaliGenerator_a075bb436818d89d2022151284ec46b14}{p}}
+\begin{DoxyCompactList}\small\item\em Простое число p. \end{DoxyCompactList}\item 
+unsigned long long \mbox{\hyperlink{classBlumMicaliGenerator_a962650f1d16cefc43789c580c437a321}{g}}
+\begin{DoxyCompactList}\small\item\em Первообразный корень по модулю p. \end{DoxyCompactList}\item 
+unsigned long long \mbox{\hyperlink{classBlumMicaliGenerator_a5ba60bb7e20fd8a9e3d6915ba725d0a6}{x0}}
+\begin{DoxyCompactList}\small\item\em Начальное значение \end{DoxyCompactList}\item 
+unsigned long long \mbox{\hyperlink{classBlumMicaliGenerator_acba5c800c2016eee99abb7600f6ae7b7}{current}}
+\begin{DoxyCompactList}\small\item\em Текущее состояние генератора \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Модифицированный алгоритм Блюма-\/Микали 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBlumMicaliGenerator_a54d4d5e4a9ea0bdc4181f6778f6a0778}\label{classBlumMicaliGenerator_a54d4d5e4a9ea0bdc4181f6778f6a0778} 
+\index{BlumMicaliGenerator@{BlumMicaliGenerator}!BlumMicaliGenerator@{BlumMicaliGenerator}}
+\index{BlumMicaliGenerator@{BlumMicaliGenerator}!BlumMicaliGenerator@{BlumMicaliGenerator}}
+\doxysubsubsection{\texorpdfstring{BlumMicaliGenerator()}{BlumMicaliGenerator()}}
+{\footnotesize\ttfamily Blum\+Micali\+Generator\+::\+Blum\+Micali\+Generator (\begin{DoxyParamCaption}\item[{unsigned long long}]{prime }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBlumMicaliGenerator_a032709b20a0cf7223ec00ea7de1d2d4d}\label{classBlumMicaliGenerator_a032709b20a0cf7223ec00ea7de1d2d4d} 
+\index{BlumMicaliGenerator@{BlumMicaliGenerator}!find\_primitive\_root@{find\_primitive\_root}}
+\index{find\_primitive\_root@{find\_primitive\_root}!BlumMicaliGenerator@{BlumMicaliGenerator}}
+\doxysubsubsection{\texorpdfstring{find\_primitive\_root()}{find\_primitive\_root()}}
+{\footnotesize\ttfamily unsigned long long Blum\+Micali\+Generator\+::find\+\_\+primitive\+\_\+root (\begin{DoxyParamCaption}\item[{unsigned long long}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Поиск первообразных корней по простому модулю p. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Простое число -\/ модуль \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Первый первообразный корень 
+\end{DoxyReturn}
+\Hypertarget{classBlumMicaliGenerator_a46a4b52879ecd5670490235d99e14b79}\label{classBlumMicaliGenerator_a46a4b52879ecd5670490235d99e14b79} 
+\index{BlumMicaliGenerator@{BlumMicaliGenerator}!generate@{generate}}
+\index{generate@{generate}!BlumMicaliGenerator@{BlumMicaliGenerator}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily void Blum\+Micali\+Generator\+::generate (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned int $>$ \&}]{output,  }\item[{size\+\_\+t}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classBlumMicaliGenerator_af09566bb97e654426ed068c532afa918}\label{classBlumMicaliGenerator_af09566bb97e654426ed068c532afa918} 
+\index{BlumMicaliGenerator@{BlumMicaliGenerator}!is\_prime@{is\_prime}}
+\index{is\_prime@{is\_prime}!BlumMicaliGenerator@{BlumMicaliGenerator}}
+\doxysubsubsection{\texorpdfstring{is\_prime()}{is\_prime()}}
+{\footnotesize\ttfamily bool Blum\+Micali\+Generator\+::is\+\_\+prime (\begin{DoxyParamCaption}\item[{unsigned long long}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Алгоритм проверки числа на простоту 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+\Hypertarget{classBlumMicaliGenerator_aed8d7ebcb0de0abb3fefe3dc04f36379}\label{classBlumMicaliGenerator_aed8d7ebcb0de0abb3fefe3dc04f36379} 
+\index{BlumMicaliGenerator@{BlumMicaliGenerator}!modular\_pow@{modular\_pow}}
+\index{modular\_pow@{modular\_pow}!BlumMicaliGenerator@{BlumMicaliGenerator}}
+\doxysubsubsection{\texorpdfstring{modular\_pow()}{modular\_pow()}}
+{\footnotesize\ttfamily unsigned long long Blum\+Micali\+Generator\+::modular\+\_\+pow (\begin{DoxyParamCaption}\item[{unsigned long long}]{base,  }\item[{unsigned long long}]{exp,  }\item[{unsigned long long}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Алгоритм быстрого возведения в степень по модулю 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base} & основание степени \\
+\hline
+{\em exp} & значение степени \\
+\hline
+{\em mod} & модуль \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+\Hypertarget{classBlumMicaliGenerator_aeec53b773270fbafbd34ec23b21978d2}\label{classBlumMicaliGenerator_aeec53b773270fbafbd34ec23b21978d2} 
+\index{BlumMicaliGenerator@{BlumMicaliGenerator}!next\_bit@{next\_bit}}
+\index{next\_bit@{next\_bit}!BlumMicaliGenerator@{BlumMicaliGenerator}}
+\doxysubsubsection{\texorpdfstring{next\_bit()}{next\_bit()}}
+{\footnotesize\ttfamily bool Blum\+Micali\+Generator\+::next\+\_\+bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Генерация следующего бита 
+
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+\Hypertarget{classBlumMicaliGenerator_adf54d07829f1b0ba676406e65d146ed2}\label{classBlumMicaliGenerator_adf54d07829f1b0ba676406e65d146ed2} 
+\index{BlumMicaliGenerator@{BlumMicaliGenerator}!next\_number@{next\_number}}
+\index{next\_number@{next\_number}!BlumMicaliGenerator@{BlumMicaliGenerator}}
+\doxysubsubsection{\texorpdfstring{next\_number()}{next\_number()}}
+{\footnotesize\ttfamily unsigned int Blum\+Micali\+Generator\+::next\+\_\+number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Генерация следующего 24 битного числа 
+
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classBlumMicaliGenerator_acba5c800c2016eee99abb7600f6ae7b7}\label{classBlumMicaliGenerator_acba5c800c2016eee99abb7600f6ae7b7} 
+\index{BlumMicaliGenerator@{BlumMicaliGenerator}!current@{current}}
+\index{current@{current}!BlumMicaliGenerator@{BlumMicaliGenerator}}
+\doxysubsubsection{\texorpdfstring{current}{current}}
+{\footnotesize\ttfamily unsigned long long Blum\+Micali\+Generator\+::current}
+
+
+
+Текущее состояние генератора 
+
+\Hypertarget{classBlumMicaliGenerator_a962650f1d16cefc43789c580c437a321}\label{classBlumMicaliGenerator_a962650f1d16cefc43789c580c437a321} 
+\index{BlumMicaliGenerator@{BlumMicaliGenerator}!g@{g}}
+\index{g@{g}!BlumMicaliGenerator@{BlumMicaliGenerator}}
+\doxysubsubsection{\texorpdfstring{g}{g}}
+{\footnotesize\ttfamily unsigned long long Blum\+Micali\+Generator\+::g}
+
+
+
+Первообразный корень по модулю p. 
+
+\Hypertarget{classBlumMicaliGenerator_a075bb436818d89d2022151284ec46b14}\label{classBlumMicaliGenerator_a075bb436818d89d2022151284ec46b14} 
+\index{BlumMicaliGenerator@{BlumMicaliGenerator}!p@{p}}
+\index{p@{p}!BlumMicaliGenerator@{BlumMicaliGenerator}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily unsigned long long Blum\+Micali\+Generator\+::p}
+
+
+
+Простое число p. 
+
+\Hypertarget{classBlumMicaliGenerator_a5ba60bb7e20fd8a9e3d6915ba725d0a6}\label{classBlumMicaliGenerator_a5ba60bb7e20fd8a9e3d6915ba725d0a6} 
+\index{BlumMicaliGenerator@{BlumMicaliGenerator}!x0@{x0}}
+\index{x0@{x0}!BlumMicaliGenerator@{BlumMicaliGenerator}}
+\doxysubsubsection{\texorpdfstring{x0}{x0}}
+{\footnotesize\ttfamily unsigned long long Blum\+Micali\+Generator\+::x0}
+
+
+
+Начальное значение 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{random__generator_8cpp}{random\+\_\+generator.\+cpp}}\end{DoxyCompactItemize}

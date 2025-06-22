@@ -1,0 +1,192 @@
+\doxysection{random\+\_\+generator.\+cpp File Reference}
+\hypertarget{random__generator_8cpp}{}\label{random__generator_8cpp}\index{random\_generator.cpp@{random\_generator.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+Include dependency graph for random\+\_\+generator.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{random__generator_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBlumBlumShub}{Blum\+Blum\+Shub}}
+\begin{DoxyCompactList}\small\item\em Класс модифицированного генератора Блюм-\/Блюм-\/Шуба \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBlumMicaliGenerator}{Blum\+Micali\+Generator}}
+\begin{DoxyCompactList}\small\item\em Модифицированный алгоритм Блюма-\/Микали \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{random__generator_8cpp_a5186a658b57294c2777ecc5817e83d0d}{LCG2}} (unsigned int \&seed1, unsigned int k1, unsigned int b1, unsigned int m1, unsigned int \&seed2, unsigned int k2, unsigned int b2, unsigned int m2)
+\begin{DoxyCompactList}\small\item\em Объединенный LCG. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{random__generator_8cpp_a6960a9d45e906bbb7ea9a4893d950ced}{get\+\_\+data}} (unsigned int N, std\+::vector$<$ unsigned int $>$ \&result, std\+::vector$<$ unsigned int $>$ \&params)
+\begin{DoxyCompactList}\small\item\em Получение данных для объединенного LCG. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{random__generator_8cpp_a77979442ddbeafdab31ea9b8b2e6794e}{mean\+\_\+st\+\_\+cv}} (std\+::vector$<$ unsigned int $>$ \&data)
+\begin{DoxyCompactList}\small\item\em Функция определения статистических параметров (среднее, отклонение, коэффициент вариации) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{random__generator_8cpp_ae4cb076b448786385f639d9fd2b15759}{chi}} (std\+::vector$<$ unsigned int $>$ \&data, unsigned int N)
+\begin{DoxyCompactList}\small\item\em Вычисление chi-\/статистики \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{random__generator_8cpp_a8379be0b379ebfcac49f4d722aec7649}{transform\+\_\+24bit}} (unsigned int input)
+\begin{DoxyCompactList}\small\item\em Функция, преобразующая 24 битное число (меняет половинки числа в битовом представлении местами) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{random__generator_8cpp_a9bf307c730f307bd5339797ab55a065c}{write\+\_\+numbers\+\_\+file}} (const std\+::string \&filename, const std\+::vector$<$ unsigned int $>$ \&numbers)
+\begin{DoxyCompactList}\small\item\em Запись в файл сгенерированных чисел \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{random__generator_8cpp_a079a54a88a41794b19e59a366d294222}{write\+\_\+bin\+\_\+file}} (const std\+::string \&filename, const std\+::vector$<$ unsigned int $>$ \&result)
+\begin{DoxyCompactList}\small\item\em Запись в файл чисел в бинарном представлении \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{random__generator_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{random__generator_8cpp_ae4cb076b448786385f639d9fd2b15759}\label{random__generator_8cpp_ae4cb076b448786385f639d9fd2b15759} 
+\index{random\_generator.cpp@{random\_generator.cpp}!chi@{chi}}
+\index{chi@{chi}!random\_generator.cpp@{random\_generator.cpp}}
+\doxysubsubsection{\texorpdfstring{chi()}{chi()}}
+{\footnotesize\ttfamily double chi (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned int $>$ \&}]{data,  }\item[{unsigned int}]{N }\end{DoxyParamCaption})}
+
+
+
+Вычисление chi-\/статистики 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Вектор данных \\
+\hline
+{\em N} & Размер данных \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+\Hypertarget{random__generator_8cpp_a6960a9d45e906bbb7ea9a4893d950ced}\label{random__generator_8cpp_a6960a9d45e906bbb7ea9a4893d950ced} 
+\index{random\_generator.cpp@{random\_generator.cpp}!get\_data@{get\_data}}
+\index{get\_data@{get\_data}!random\_generator.cpp@{random\_generator.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_data()}{get\_data()}}
+{\footnotesize\ttfamily void get\+\_\+data (\begin{DoxyParamCaption}\item[{unsigned int}]{N,  }\item[{std\+::vector$<$ unsigned int $>$ \&}]{result,  }\item[{std\+::vector$<$ unsigned int $>$ \&}]{params }\end{DoxyParamCaption})}
+
+
+
+Получение данных для объединенного LCG. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em N} & Необходимое количество генерируемых значений \\
+\hline
+{\em result} & Вектор с результатом \\
+\hline
+{\em params} & Вектор параметров, необходимых для использования объединенного LCG \\
+\hline
+\end{DoxyParams}
+\Hypertarget{random__generator_8cpp_a5186a658b57294c2777ecc5817e83d0d}\label{random__generator_8cpp_a5186a658b57294c2777ecc5817e83d0d} 
+\index{random\_generator.cpp@{random\_generator.cpp}!LCG2@{LCG2}}
+\index{LCG2@{LCG2}!random\_generator.cpp@{random\_generator.cpp}}
+\doxysubsubsection{\texorpdfstring{LCG2()}{LCG2()}}
+{\footnotesize\ttfamily void LCG2 (\begin{DoxyParamCaption}\item[{unsigned int \&}]{seed1,  }\item[{unsigned int}]{k1,  }\item[{unsigned int}]{b1,  }\item[{unsigned int}]{m1,  }\item[{unsigned int \&}]{seed2,  }\item[{unsigned int}]{k2,  }\item[{unsigned int}]{b2,  }\item[{unsigned int}]{m2 }\end{DoxyParamCaption})}
+
+
+
+Объединенный LCG. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed1} & Начальное значение для 1 LCG \\
+\hline
+{\em k1} & Коэффициент умножения для 1 LCG \\
+\hline
+{\em b1} & Коэффициент смещения для 1 LCG \\
+\hline
+{\em m1} & Модуль сравнения для 1 LCG \\
+\hline
+{\em seed2} & Начальное значение для 2 LCG \\
+\hline
+{\em k2} & Коэффициент умножения для 2 LCG \\
+\hline
+{\em b2} & Коэффициент смещения для 2 LCG \\
+\hline
+{\em m2} & Модуль сравнения для 2 LCG \\
+\hline
+\end{DoxyParams}
+\Hypertarget{random__generator_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{random__generator_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{random\_generator.cpp@{random\_generator.cpp}!main@{main}}
+\index{main@{main}!random\_generator.cpp@{random\_generator.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{random__generator_8cpp_a77979442ddbeafdab31ea9b8b2e6794e}\label{random__generator_8cpp_a77979442ddbeafdab31ea9b8b2e6794e} 
+\index{random\_generator.cpp@{random\_generator.cpp}!mean\_st\_cv@{mean\_st\_cv}}
+\index{mean\_st\_cv@{mean\_st\_cv}!random\_generator.cpp@{random\_generator.cpp}}
+\doxysubsubsection{\texorpdfstring{mean\_st\_cv()}{mean\_st\_cv()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mean\+\_\+st\+\_\+cv (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned int $>$ \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Функция определения статистических параметров (среднее, отклонение, коэффициент вариации) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает значение параметров в виде вектора 
+\end{DoxyReturn}
+\Hypertarget{random__generator_8cpp_a8379be0b379ebfcac49f4d722aec7649}\label{random__generator_8cpp_a8379be0b379ebfcac49f4d722aec7649} 
+\index{random\_generator.cpp@{random\_generator.cpp}!transform\_24bit@{transform\_24bit}}
+\index{transform\_24bit@{transform\_24bit}!random\_generator.cpp@{random\_generator.cpp}}
+\doxysubsubsection{\texorpdfstring{transform\_24bit()}{transform\_24bit()}}
+{\footnotesize\ttfamily unsigned int transform\+\_\+24bit (\begin{DoxyParamCaption}\item[{unsigned int}]{input }\end{DoxyParamCaption})}
+
+
+
+Функция, преобразующая 24 битное число (меняет половинки числа в битовом представлении местами) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+\Hypertarget{random__generator_8cpp_a079a54a88a41794b19e59a366d294222}\label{random__generator_8cpp_a079a54a88a41794b19e59a366d294222} 
+\index{random\_generator.cpp@{random\_generator.cpp}!write\_bin\_file@{write\_bin\_file}}
+\index{write\_bin\_file@{write\_bin\_file}!random\_generator.cpp@{random\_generator.cpp}}
+\doxysubsubsection{\texorpdfstring{write\_bin\_file()}{write\_bin\_file()}}
+{\footnotesize\ttfamily void write\+\_\+bin\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const std\+::vector$<$ unsigned int $>$ \&}]{result }\end{DoxyParamCaption})}
+
+
+
+Запись в файл чисел в бинарном представлении 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Имя файла записи \\
+\hline
+{\em result} & Массив данных \\
+\hline
+\end{DoxyParams}
+\Hypertarget{random__generator_8cpp_a9bf307c730f307bd5339797ab55a065c}\label{random__generator_8cpp_a9bf307c730f307bd5339797ab55a065c} 
+\index{random\_generator.cpp@{random\_generator.cpp}!write\_numbers\_file@{write\_numbers\_file}}
+\index{write\_numbers\_file@{write\_numbers\_file}!random\_generator.cpp@{random\_generator.cpp}}
+\doxysubsubsection{\texorpdfstring{write\_numbers\_file()}{write\_numbers\_file()}}
+{\footnotesize\ttfamily void write\+\_\+numbers\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const std\+::vector$<$ unsigned int $>$ \&}]{numbers }\end{DoxyParamCaption})}
+
+
+
+Запись в файл сгенерированных чисел 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Имя файла записи \\
+\hline
+{\em numbers} & Массив данных \\
+\hline
+\end{DoxyParams}
